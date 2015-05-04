@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var signup = require('./routes/signup');
 
 var app = express();
 
@@ -57,5 +58,10 @@ if (app.get('env') === 'production') {
         });
     });
 }
+
+/**
+ * Routes
+ */
+app.use('/signup', signup);
 
 module.exports = app;
